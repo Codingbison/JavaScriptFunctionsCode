@@ -6,32 +6,34 @@ the list and checks that the current name is in the string passed in. The output
 let dog_string = "Hello Max, my name is Dog, and I have purple eyes!"
 let dog_names = ["Max","HAS","PuRple","dog"]
 
-function findWords(){
-var arrayLength = dog_string.length;
-for (var i = 0; i < arrayLength; i++) 
-
-    console.log(dog_string[i], 'Matched dog_name')
+function findWords(dog_string, dog_names){
+var arrayLength = dog_names.length;
+for (var i = 0; i < arrayLength; i++) {
+    if (dog_string.includes(dog_names[i])){
+        console.log(dog_names[i])
+    
+    }
+}
     
 }
-console.log(findWords())
+findWords(dog_string, dog_names)
 
 //============Exercise #2 ============//
 /*Write a fucntion that takes in an array and removes every even index with a splice,
 and replaces it with the string "even index" */
 
-Given arr == ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
+let arr = ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
 
 function replaceEvens(arr){
-    var array = [];
 
-    for (var i = 0; i < a.lenght; i++){
+    for (let i = 0; i < arr.length; i++){
         if(i % 2 === 0){
-            array.push(a[i]);
+            arr.splice(i, 1, "Even index");
         }
     }
-    return(replaceEvens(array));
-}
-alert(even(arr));
+    return arr
+};
+replaceEvens(arr);
 
 //Expected output
 //Given arr == ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
